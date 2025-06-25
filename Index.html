@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayan Amir - Full Stack Developer | React & Java Expert</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #60A5FA, #3B82F6, #1E40AF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .terminal {
+            background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+            border: 1px solid #333;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #60A5FA;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.1em;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #60A5FA }
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(96, 165, 250, 0.2);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+        }
+        
+        .contribution-cell {
+            width: 12px;
+            height: 12px;
+            margin: 1px;
+            border-radius: 2px;
+        }
+        
+        .level-0 { background-color: #161b22; }
+        .level-1 { background-color: #0e4429; }
+        .level-2 { background-color: #006d32; }
+        .level-3 { background-color: #26a641; }
+        .level-4 { background-color: #39d353; }
+        
+        @media print {
+            body { -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-bold gradient-text">Ayan Amir</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                    <a href="#blog" class="hover:text-blue-400 transition-colors">Blog</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-gray-900"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="mb-8">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                    <span class="gradient-text">Ayan Amir</span>
+                </h1>
+                <div class="text-xl md:text-2xl text-gray-300 typewriter">
+                    Hey, I build scalable apps. React | Java | APIs.
+                </div>
+            </div>
+            <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
+                Full Stack Developer with 2+ years of experience crafting robust web applications 
+                and scalable backend systems. Specialized in React ecosystem and Java/Spring Boot.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <button class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors glow">
+                    View My Work
+                </button>
+                <button class="border border-blue-600 hover:bg-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Download Resume
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        I'm a passionate 20-year-old Full Stack Developer with over 2 years of hands-on experience 
+                        building modern web applications. My journey started with curiosity about how things work 
+                        behind the scenes, and it evolved into a deep expertise in both frontend and backend technologies.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        Specializing in React for dynamic user interfaces and Java/Spring Boot for robust backend systems, 
+                        I've successfully delivered 15+ projects for clients ranging from startups to established businesses. 
+                        My remote work experience has taught me the importance of clear communication and efficient project delivery.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <span class="bg-blue-600/20 text-blue-400 px-4 py-2 rounded-full text-sm">2+ Years Experience</span>
+                        <span class="bg-green-600/20 text-green-400 px-4 py-2 rounded-full text-sm">15+ Projects Delivered</span>
+                        <span class="bg-purple-600/20 text-purple-400 px-4 py-2 rounded-full text-sm">Remote Specialist</span>
+                    </div>
+                </div>
+                <div class="terminal rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div class="ml-4 text-sm text-gray-400">ayan@dev:~$</div>
+                    </div>
+                    <div class="text-green-400 font-mono text-sm space-y-2">
+                        <div>$ whoami</div>
+                        <div class="text-white">Ayan Amir - Full Stack Developer</div>
+                        <div>$ skills --list</div>
+                        <div class="text-white">Frontend: React, TypeScript, Tailwind CSS</div>
+                        <div class="text-white">Backend: Java, Spring Boot, Node.js</div>
+                        <div class="text-white">Database: MongoDB, PostgreSQL, MySQL</div>
+                        <div class="text-white">DevOps: Docker, AWS, Git</div>
+                        <div>$ status</div>
+                        <div class="text-white">Available for new opportunities ✨</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Technical Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fab fa-react text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="font-semibold mb-2">React</h3>
+                    <div class="text-sm text-gray-400">95%</div>
+                </div>
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fab fa-java text-4xl text-orange-400 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Java</h3>
+                    <div class="text-sm text-gray-400">90%</div>
+                </div>
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fab fa-js-square text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="font-semibold mb-2">JavaScript</h3>
+                    <div class="text-sm text-gray-400">95%</div>
+                </div>
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fab fa-node-js text-4xl text-green-400 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Node.js</h3>
+                    <div class="text-sm text-gray-400">85%</div>
+                </div>
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fas fa-database text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="font-semibold mb-2">MongoDB</h3>
+                    <div class="text-sm text-gray-400">88%</div>
+                </div>
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fab fa-docker text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Docker</h3>
+                    <div class="text-sm text-gray-400">80%</div>
+                </div>
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fab fa-aws text-4xl text-orange-400 mb-4"></i>
+                    <h3 class="font-semibold mb-2">AWS</h3>
+                    <div class="text-sm text-gray-400">75%</div>
+                </div>
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fab fa-git-alt text-4xl text-red-400 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Git</h3>
+                    <div class="text-sm text-gray-400">92%</div>
+                </div>
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fas fa-leaf text-4xl text-green-500 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Spring Boot</h3>
+                    <div class="text-sm text-gray-400">87%</div>
+                </div>
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fab fa-html5 text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="font-semibold mb-2">HTML5</h3>
+                    <div class="text-sm text-gray-400">98%</div>
+                </div>
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fab fa-css3-alt text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-semibold mb-2">CSS3</h3>
+                    <div class="text-sm text-gray-400">95%</div>
+                </div>
+                <div class="skill-card glass rounded-xl p-6 text-center">
+                    <i class="fas fa-server text-4xl text-gray-400 mb-4"></i>
+                    <h3 class="font-semibold mb-2">REST APIs</h3>
+                    <div class="text-sm text-gray-400">93%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card glass rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-purple-600 p-6 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-chart-line text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold">InventoryPro SaaS</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">Enterprise inventory management system with real-time analytics and automated reporting features.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm">Spring Boot</span>
+                            <span class="bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                            <span class="bg-yellow-600/20 text-yellow-400 px-3 py-1 rounded-full text-sm">Docker</span>
+                        </div>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <div>• Improved client's revenue by 30%</div>
+                            <div>• Reduced processing time by 60%</div>
+                            <div>• 50K+ inventory items managed</div>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-600 to-teal-600 p-6 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-tasks text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold">TaskFlow API</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">RESTful API for project management with advanced task tracking and team collaboration features.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-600/20 text-orange-400 px-3 py-1 rounded-full text-sm">Java</span>
+                            <span class="bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm">Spring Boot</span>
+                            <span class="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                            <span class="bg-red-600/20 text-red-400 px-3 py-1 rounded-full text-sm">Redis</span>
+                        </div>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <div>• Reduced API latency by 200ms</div>
+                            <div>• Handles 10K+ concurrent users</div>
+                            <div>• 99.9% uptime achieved</div>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 p-6 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-shopping-cart text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold">E-Commerce Dashboard</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">Comprehensive admin dashboard for e-commerce platforms with real-time sales analytics and inventory management.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-yellow-600/20 text-yellow-400 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                            <span class="bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <div>• Increased sales efficiency by 45%</div>
+                            <div>• Real-time data visualization</div>
+                            <div>• Mobile-responsive interface</div>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card glass rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-red-600 to-orange-600 p-6 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-cloud text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold">CloudSync Platform</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">Microservices-based file synchronization platform with automated backup and cross-platform compatibility.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-600/20 text-orange-400 px-3 py-1 rounded-full text-sm">Java</span>
+                            <span class="bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm">Spring Cloud</span>
+                            <span class="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm">AWS S3</span>
+                            <span class="bg-yellow-600/20 text-yellow-400 px-3 py-1 rounded-full text-sm">Docker</span>
+                        </div>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <div>• 500GB+ data synchronized daily</div>
+                            <div>• 99.95% data integrity maintained</div>
+                            <div>• Multi-platform support</div>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card glass rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-indigo-600 to-blue-600 p-6 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-users text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold">SocialHub Analytics</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">Social media analytics platform with sentiment analysis and automated reporting for marketing teams.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm">Express.js</span>
+                            <span class="bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                            <span class="bg-pink-600/20 text-pink-400 px-3 py-1 rounded-full text-sm">Chart.js</span>
+                        </div>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <div>• 1M+ social posts analyzed</div>
+                            <div>• 85% accuracy in sentiment analysis</div>
+                            <div>• Automated daily reports</div>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="text-blue-400 hover:text-blue-300"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Contribution Graph -->
+    <section class="py-16 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-2xl font-bold mb-8 text-center">GitHub Activity</h3>
+            <div class="glass rounded-xl p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="text-lg font-semibold">847 contributions in the last year</div>
+                    <div class="text-sm text-gray-400">More active on private repositories</div>
+                </div>
+                <div class="grid grid-cols-53 gap-1" id="contribution-graph">
+                    <!-- Contribution cells will be generated by JavaScript -->
+                </div>
+                <div class="flex items-center justify-between mt-4 text-sm text-gray-400">
+                    <div>Less</div>
+                    <div class="flex space-x-1">
+                        <div class="contribution-cell level-0"></div>
+                        <div class="contribution-cell level-1"></div>
+                        <div class="contribution-cell level-2"></div>
+                        <div class="contribution-cell level-3"></div>
+                        <div class="contribution-cell level-4"></div>
+                    </div>
+                    <div>More</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Client Testimonials</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                            SM
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold">Sarah Mitchell</div>
+                            <div class="text-sm text-gray-400">CEO, TechStart Inc.</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Ayan delivered our MVP in just 3 weeks! His expertise in React and Java helped us launch ahead of schedule. The code quality is exceptional and the project architecture is scalable."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="glass rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold">
+                            MJ
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold">Michael Johnson</div>
+                            <div class="text-sm text-gray-400">CTO, DataFlow Solutions</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Working with Ayan was a game-changer for our project. His full-stack expertise and attention to detail resulted in a 40% improvement in our application performance. Highly recommended!"</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="glass rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold">
+                            ED
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold">Emily Davis</div>
+                            <div class="text-sm text-gray-400">Product Manager, InnovateLab</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Ayan's ability to translate complex requirements into elegant solutions is outstanding. The e-commerce platform he built for us increased our conversion rate by 25%."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Latest Blog Posts</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="glass rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-indigo-600 p-6 flex items-center justify-center">
+                        <i class="fas fa-rocket text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Optimizing Spring Boot APIs for High Performance</h3>
+                        <p class="text-gray-400 mb-4">Learn advanced techniques to optimize your Spring Boot applications for better performance and scalability. From database optimization to caching strategies.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span>Dec 15, 2023</span>
+                            <span>8 min read</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="glass rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-600 to-emerald-600 p-6 flex items-center justify-center">
+                        <i class="fab fa-react text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">React Performance: Beyond useCallback and useMemo</h3>
+                        <p class="text-gray-400 mb-4">Dive deep into advanced React optimization techniques that go beyond the basics. Discover lesser-known patterns for building lightning-fast React applications.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span>Nov 28, 2023</span>
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="glass rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 p-6 flex items-center justify-center">
+                        <i class="fas fa-cloud text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Microservices Architecture: A Practical Guide</h3>
+                        <p class="text-gray-400 mb-4">A comprehensive guide to implementing microservices architecture with Spring Boot and Docker. Real-world examples and best practices included.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500">
+                            <span>Nov 10, 2023</span>
+                            <span>15 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Let's Work Together</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+                            <p class="text-lg text-gray-300 mb-8">
+                                Ready to bring your next project to life? I'm available for freelance work, 
+                                full-time opportunities, and consulting projects. Let's discuss how we can 
+                                work together to create something amazing.
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Email</div>
+                                    <div class="text-gray-400">ayanamir557@gmail.com</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Phone</div>
+                                    <div class="text-gray-400">+92 324-7733639</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">LinkedIn</div>
+                                    <div class="text-gray-400">linkedin.com/in/ayan-amir-dev</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">GitHub</div>
+                                    <div class="text-gray-400">github.com/ayanamir</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass rounded-xl p-8">
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Name</label>
+                                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-blue-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-blue-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Project Type</label>
+                                <select class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-blue-500 focus:outline-none">
+                                    <option>Web Application</option>
+                                    <option>API Development</option>
+                                    <option>Full Stack Project</option>
+                                    <option>Consulting</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Message</label>
+                                <textarea rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:border-blue-500 focus:outline-none" placeholder="Tell me about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-semibold transition-colors glow">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="text-lg font-bold gradient-text mb-4 md:mb-0">Ayan Amir</div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="mailto:ayanamir557@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Ayan Amir. All rights reserved. Built with passion and modern web technologies.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Generate GitHub contribution graph
+        function generateContributionGraph() {
+            const graph = document.getElementById('contribution-graph');
+            const totalCells = 371; // 53 weeks * 7 days
+            
+            for (let i = 0; i < totalCells; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'contribution-cell';
+                
+                // Generate realistic contribution pattern
+                const randomLevel = Math.random();
+                if (randomLevel < 0.6) {
+                    cell.classList.add('level-0');
+                } else if (randomLevel < 0.75) {
+                    cell.classList.add('level-1');
+                } else if (randomLevel < 0.85) {
+                    cell.classList.add('level-2');
+                } else if (randomLevel < 0.95) {
+                    cell.classList.add('level-3');
+                } else {
+                    cell.classList.add('level-4');
+                }
+                
+                graph.appendChild(cell);
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize components when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            generateContributionGraph();
+            
+            // Add scroll effect to navigation
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.style.background = 'rgba(17, 24, 39, 0.95)';
+                } else {
+                    nav.style.background = 'rgba(255, 255, 255, 0.05)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
